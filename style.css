@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap');
+
+:root {
+  --clr-primary: hsl(240, 38%, 20%);
+  --clr-secondary: rgb(186, 186, 207);
+  --clr-bg: hsl(0, 0%, 100%);
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: var(--clr-bg);
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+.container {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+.testimonials {
+  font-size: 1.1rem;
+  font-weight: 300;
+  padding: 30px 30px 50px;
+  text-align: center;
+  position: relative;
+}
+.testimonials .overlay {
+  width: 100%;
+  height: 75px;
+  background: url('./images/pattern-curve.svg') no-repeat;
+  background-size: contain;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: -100;
+}
+.testimonials .container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  align-items: center;
+}
+.author-img {
+  background: url('./images/pattern-bg.svg') no-repeat center/contain;
+  padding: 30px 40px;
+  position: relative;
+  max-width: 400px;
+}
+.author-img img {
+  min-width: 250px;
+  min-height: 250px;
+  height: 100%;
+  width: 100%;
+  /* object-fit: cover; */
+  border-radius: 5px;
+  box-shadow: -1px 30px 50px -34px rgba(125, 125, 179, 0.83);
+}
+
+.slider-btns {
+  width: 80px;
+  height: 40px;
+  display: flex;
+  border-radius: 40px;
+  overflow: hidden;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: -1px 8px 40px -5px rgba(125, 125, 179, 0.83);
+}
+.slider-btns i {
+  font-size: 1rem;
+  color: rgb(130, 130, 187);
+}
+.slider-btns button {
+  background: #fff;
+  display: inline-block;
+  border: none;
+  flex-basis: 100%;
+  transition: background 250ms;
+}
+.slider-btns button:hover {
+  background: rgb(228, 228, 255);
+}
+
+/* text */
+.info {
+  padding: 30px 0;
+  background: url('./images/pattern-quotes.svg') no-repeat top center/60px;
+  font-weight: 300;
+  max-width: 600px;
+}
+.text {
+  color: hsl(240, 38%, 30%);
+  margin-bottom: 1.1rem;
+}
+.name {
+  font-size: 0.9rem;
+  color: var(--clr-primary);
+  letter-spacing: 0.4px;
+}
+.job {
+  font-size: 0.9rem;
+  color: hsl(240, 38%, 75%);
+}
+
+@media screen and (min-width: 680px) {
+  .testimonials {
+    font-size: 1.4rem;
+    font-weight: 400;
+    padding: 50px;
+    text-align: unset;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+  }
+  .testimonials .overlay {
+    height: 80px;
+  }
+  .testimonials .container {
+    flex-direction: row;
+    gap: 25px;
+  }
+  .author {
+    order: 2;
+    flex-basis: 100%;
+  }
+  .author-img {
+    margin-left: -100px;
+    max-width: 700px;
+  }
+  .info {
+    z-index: 1;
+    order: 1;
+    flex-basis: 100%;
+  }
+  .slider-btns {
+    left: 20%;
+    transform: translateX(0);
+    box-shadow: -1px 20px 40px -15px rgba(125, 125, 179, 0.83);
+  }
+  .text {
+    margin-bottom: 1.7rem;
+  }
+  .name {
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
+  }
+  .job {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (min-width: 880px) {
+  .testimonials {
+    font-size: 2rem;
+    font-weight: 400;
+    padding: 80px 50px;
+  }
+  .author {
+    order: 2;
+    flex-basis: 45%;
+  }
+  .author-img {
+    margin-left: -174px;
+    padding: 60px 80px;
+  }
+  .author-img img {
+    border-radius: 8px;
+    box-shadow: -8px 30px 50px -25px rgba(125, 125, 179, 0.83);
+  }
+  .slider-btns {
+    width: 120px;
+    height: 55px;
+    bottom: 33px;
+    left: 20%;
+    transform: translateX(0);
+    box-shadow: -1px 20px 40px -18px rgba(125, 125, 179, 0.83);
+  }
+  .slider-btns i {
+    font-size: 1.4rem;
+  }
+  .info {
+    z-index: 1;
+    order: 1;
+    flex-basis: 55%;
+    background-position: 18% top;
+    background-size: 115px;
+    padding: 60px 0;
+    max-width: 100%;
+  }
+  .text {
+    margin-bottom: 2rem;
+  }
+  .author-info {
+    display: flex;
+    gap: 1rem;
+  }
+  .name {
+    font-size: 1.1rem;
+  }
+  .job {
+    font-size: 1.1rem;
+  }
+}
+
+.attribution {
+  position: absolute;
+  bottom: 5px;
+  letter-spacing: 0.5px;
+  font-size: 11px;
+  text-align: center;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0.6;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
